@@ -5,7 +5,7 @@ A demo for istio grpc external authorization server.
 Please ensure you have installed k8s and istio related.
 
 ## Usage
-1. run [`ext_authz_server/pack.sh`](ext_authz_server/pack.sh) to make a external authorization image to docker hub. Note that you should change the docker user name.
+1. run [`ext_authz_server/pack.sh`](ext_authz_server/pack.sh) to build a external authorization image to docker hub. Note that you should change the docker user name. You can use [my image](https://hub.docker.com/r/sasakiyori/ext-authz-server/tags) built by this repository's code as well.
     ```bash
     #!/bin/bash
 
