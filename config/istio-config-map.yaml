@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  mesh: |-
+    extensionProviders:
+    - name: "ext-authz-server"
+      envoyExtAuthzGrpc:
+        service: "ext-authz-server.default.svc.cluster.local"
+        port: "9999"

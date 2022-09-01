@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ext-authz-server
+  labels:
+    app: ext-authz-server
+spec:
+  ports:
+  - name: grpc
+    port: 9999
+    targetPort: 9999
+  selector:
+    app: ext-authz-server
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ext-authz-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ext-authz-server
+  template:
+    metadata:
+      labels:
+        app: ext-authz-server
+    spec:
+      containers:
+      - image: docker.io/sasakiyori/ext-authz-server:0.0.1
+        imagePullPolicy: Always
+        name: ext-authz-server
+        ports:
+        - containerPort: 9999
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
+---
