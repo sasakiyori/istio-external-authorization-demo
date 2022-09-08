@@ -1,4 +1,4 @@
-# istio-external-authorization-demo
+# Istio External Authorization Server Demo
 A demo for istio grpc external authorization server.
 
 ## Precondition
